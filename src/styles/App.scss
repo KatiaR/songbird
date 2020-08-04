@@ -1,5 +1,6 @@
 $primary-text-color: white;
 $background-gradient: linear-gradient(-135deg, #608168, #034228);
+$background-color: rgba(80, 79, 77, 0.329);
 
 %list-decoration {
   display: flex;
@@ -14,8 +15,7 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
 
 %section-decoration {
   display: flex;
-  background-color: rgba(80, 79, 77, 0.329);
-
+  background-color: $background-color;
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -30,8 +30,19 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
   flex-direction: column;
 }
 
+@mixin gap($gap, $content) {
+  justify-content: $content;
+  gap: $gap;
+}
+
 .App {
   text-align: center;
+
+  img {
+    object-fit: contain;
+    max-width: 30%;
+    border-radius: 1.5rem;
+  }
 
   .App-content {
     margin: 3rem;
@@ -50,19 +61,12 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
       }
     }
 
-    img {
-      object-fit: contain;
-      max-width: 30%;
-      border-radius: 1rem;
-    }
-
     .Nav-content {
       @extend %flex-wrap;
       .Nav-list {
         @extend %flex-wrap;
+        @include gap(1rem, center);
         width: 100%;
-        gap: 1rem;
-        justify-content: center;
         list-style-type: none;
         font-size: calc(10px + 2vmin);
         color: $primary-text-color;
@@ -73,6 +77,12 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
         a {
           @extend %a-decoration;
         }
+
+        .pointer-page {
+          border-radius: 0.5rem;
+          border-bottom: 1px solid black;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
       }
     }
 
@@ -81,9 +91,8 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
       gap: 1rem;
       .Main-content-preview {
         @extend %section-decoration;
+        @include gap(2rem, center);
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
         .Main-content-audio {
           @extend %flex-column;
           min-width: 60%;
@@ -97,25 +106,28 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
         }
       }
       .Main-content-description {
-        @extend %flex-wrap;
+        display: flex;
         gap: 1rem;
         .Description-nav {
+          min-width: 40%;
           .Description-nav-list {
             @extend %section-decoration;
             padding: 0;
             flex-direction: column;
-            min-width: 40%;
             margin: 0;
             li {
+              @extend %list-decoration;
               border-bottom: 1px solid black;
               padding: 0.5rem;
               margin: 0.5rem;
               border-radius: 0.5rem;
-              @extend %list-decoration;
               cursor: pointer;
               a {
                 @extend %a-decoration;
               }
+            }
+            li:hover {
+              background-color: $background-color;
             }
           }
         }
@@ -126,33 +138,47 @@ $background-gradient: linear-gradient(-135deg, #608168, #034228);
           padding: 1rem;
           .Description-items-name {
             @extend %flex-wrap;
-            justify-content: center;
-
+            @include gap(1rem, center);
             .Items-name {
               min-width: 60%;
             }
           }
         }
       }
-      .btn-next {
-        width: 95%;
-        font-family: 'Montserrat Alternates', sans-serif;
-        font-weight: 600;
-        line-height: 3rem;
-        outline: none;
-        color: white;
-        font-size: 15px;
-        text-transform: uppercase;
-        background: $background-gradient;
-        border-width: 0;
-        box-shadow: 5px 5px 0 #008966;
-        cursor: pointer;
-        transition: 1.5s;
-        border-radius: 0.5rem;
-      }
+    }
+    .btn-next {
+      width: 95%;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 600;
+      line-height: 3rem;
+      outline: none;
+      color: white;
+      margin-top: 2rem;
+      font-size: 15px;
+      text-transform: uppercase;
+      background: $background-gradient;
+      border-width: 0;
+      box-shadow: 5px 5px 0 #008966;
+      cursor: pointer;
+      transition: 1.5s;
+      border-radius: 0.5rem;
+    }
 
-      .btn-next:hover {
-        color: rgb(7, 221, 103);
+    .btn-next:hover {
+      color: rgb(7, 221, 103);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .App {
+    img {
+      max-width: 80%;
+    }
+    .App-content {
+      margin: 1rem;
+      .Main-content-description {
+        flex-direction: column;
       }
     }
   }
