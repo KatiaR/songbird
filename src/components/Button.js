@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = ({}) => {
-  return <button className="btn-next"> NEXT </button>;
+const Button = ({onClick}) => {
+  return <button className="btn-next" onClick={onClick}> NEXT </button>;
 };
 
 export default Button;

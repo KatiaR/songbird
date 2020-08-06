@@ -32,8 +32,15 @@
     .Description-items-name {
       @extend %flex-wrap;
       @include gap(1rem, center);
+      img {
+        object-fit: cover;
+        .unpickedItem {
+          min-width: 50%;
+        }
+      }
+
       .Items-name {
-        min-width: 60%;
+        min-width: 50%;
       }
     }
   }

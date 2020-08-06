@@ -1,30 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Navigation = ({}) => {
+const Navigation = ({navigationList, iCount}) => {
   return (
     <nav className="Nav-content">
       <ul className="Nav-list">
-        <li className="pointer-page">
-          <a href="#">Разминка</a>
-        </li>
-        <li>
-          <a href="#">Вообьиные</a>
-        </li>
-        <li>
-          <a href="#">Лесные птицы</a>
-        </li>
-        <li>
-          <a href="#">Певчие птицы</a>
-        </li>
-        <li>
-          <a href="#">Хищные птицы</a>
-        </li>
-        <li>
-          <a href="#">Морские птицы</a>
-        </li>
+        {navigationList.map((item, i) => {
+          return (
+            <li key={item} className={`${iCount === i ? 'pointer-page' : ''}`}>
+              <a href="#">{item}</a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  navigationList: PropTypes.array,
 };
 
 export default Navigation;
