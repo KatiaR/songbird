@@ -47,126 +47,16 @@ $background-color: rgba(80, 79, 77, 0.329);
   .App-content {
     margin: 3rem;
 
-    .App-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: calc(10px + 2vmin);
-      color: $primary-text-color;
-      .logo {
-        background-image: url(../images/logo.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 12rem;
-        height: 3rem;
-      }
-    }
-
-    .Nav-content {
-      @extend %flex-wrap;
-      .Nav-list {
-        @extend %flex-wrap;
-        @include gap(1rem, center);
-        width: 100%;
-        list-style-type: none;
-        font-size: calc(10px + 2vmin);
-        color: $primary-text-color;
-        padding: 1rem 0;
-        background: $background-gradient;
-        border-radius: 1rem;
-
-        a {
-          @extend %a-decoration;
-        }
-
-        .pointer-page {
-          border-radius: 0.5rem;
-          border-bottom: 1px solid black;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
+    @import 'Header';
+    @import 'Navigation';
 
     .Main-content {
       @extend %flex-column;
       gap: 1rem;
-      .Main-content-preview {
-        @extend %section-decoration;
-        @include gap(2rem, center);
-        flex-wrap: wrap;
-        .Main-content-audio {
-          @extend %flex-column;
-          min-width: 60%;
-          align-items: flex-start;
-          justify-content: space-around;
-
-          .Main-content-audio-wrapper {
-            width: 100%;
-            border-top: 1px solid black;
-          }
-        }
-      }
-      .Main-content-description {
-        display: flex;
-        gap: 1rem;
-        .Description-nav {
-          min-width: 40%;
-          .Description-nav-list {
-            @extend %section-decoration;
-            padding: 0;
-            flex-direction: column;
-            margin: 0;
-            li {
-              @extend %list-decoration;
-              border-bottom: 1px solid black;
-              padding: 0.5rem;
-              margin: 0.5rem;
-              border-radius: 0.5rem;
-              cursor: pointer;
-              a {
-                @extend %a-decoration;
-              }
-            }
-            li:hover {
-              background-color: $background-color;
-            }
-          }
-        }
-
-        .Description-items {
-          @extend %section-decoration;
-          flex-direction: column;
-          padding: 1rem;
-          .Description-items-name {
-            @extend %flex-wrap;
-            @include gap(1rem, center);
-            .Items-name {
-              min-width: 60%;
-            }
-          }
-        }
-      }
+      @import 'Preview';
+      @import 'Description';
     }
-    .btn-next {
-      width: 95%;
-      font-family: 'Montserrat Alternates', sans-serif;
-      font-weight: 600;
-      line-height: 3rem;
-      outline: none;
-      color: white;
-      margin-top: 2rem;
-      font-size: 15px;
-      text-transform: uppercase;
-      background: $background-gradient;
-      border-width: 0;
-      box-shadow: 5px 5px 0 #008966;
-      cursor: pointer;
-      transition: 1.5s;
-      border-radius: 0.5rem;
-    }
-
-    .btn-next:hover {
-      color: rgb(7, 221, 103);
-    }
+    @import 'Button';
   }
 }
 

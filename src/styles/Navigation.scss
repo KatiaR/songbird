@@ -1,0 +1,24 @@
+.Nav-content {
+  @extend %flex-wrap;
+  .Nav-list {
+    @extend %flex-wrap;
+    @include gap(1rem, center);
+    width: 100%;
+    list-style-type: none;
+    font-size: calc(10px + 2vmin);
+    color: $primary-text-color;
+    padding: 1rem 0;
+    background: $background-gradient;
+    border-radius: 1rem;
+
+    a {
+      @extend %a-decoration;
+    }
+
+    .pointer-page {
+      border-radius: 0.5rem;
+      border-bottom: 1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
