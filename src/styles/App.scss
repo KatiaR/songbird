@@ -60,6 +60,18 @@ $background-color: rgba(80, 79, 77, 0.329);
   }
 }
 
+@media (max-width: 992px) {
+  .App {
+    .Description-items-name {
+      flex-direction: column;
+      img {
+        max-width: 60%;
+        align-self: center;
+      }
+    }
+  }
+}
+
 @media (max-width: 640px) {
   .App {
     img {
@@ -67,8 +79,14 @@ $background-color: rgba(80, 79, 77, 0.329);
     }
     .App-content {
       margin: 1rem;
+      .Main-content-audio {
+        width: 100%;
+      }
       .Main-content-description {
         flex-direction: column;
+        .Items-name {
+          width: 100%;
+        }
       }
     }
   }

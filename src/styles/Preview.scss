@@ -5,11 +5,12 @@
   .Main-content-audio {
     @extend %flex-column;
     min-width: 60%;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
 
     .Main-content-audio-wrapper {
       width: 100%;
+      @import 'AudioPlayer';
     }
   }
 }

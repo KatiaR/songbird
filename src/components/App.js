@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
 import Preview from './Preview';
@@ -10,24 +10,24 @@ import birdsData from '../assets/birds';
 import PropTypes from 'prop-types';
 
 function App() {
-  const [aBirdsData, setData] = React.useState(birdsData);
-  const [selectedItemId, setSelectedId] = React.useState(Date.now());
-  let [iCount, setCount] = React.useState(0);
+  const [aBirdsData, setData] = useState(birdsData);
+  const [selectedItemId, setSelectedId] = useState(Date.now());
+  let [iCount, setCount] = useState(0);
   
   function onSelectedItem(id) {
     setSelectedId(id);
   }
 
   function onCountClick() {
-    setSelectedId(null);
     iCount < aBirdsData.length -1 && setCount(++iCount);
+    setSelectedId(null);
   }
 
   return (
     <div className="App">
       <div className="App-content">
         <Header />
-        <Navigation navigationList={navigationList}  pageIndicator={iCount}/>
+        <Navigation navigationList={navigationList}  indicatorPage={iCount}/>
         <main className="Main-content">
           <Preview />
           <Description
