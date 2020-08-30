@@ -30,12 +30,18 @@ function App() {
 
   const [modalVisible, setModalVisible] = useState(false);
 
-  console.log(randomItemId);
+  console.log('correct answer', randomItemId); // to see the right answers
 
   const randomPreviewData = {
     image: questionImg,
     name: '****',
     audio: birdsData[iCount][iRandomPreviewItem].audio,
+  };
+
+  const modalData = {
+    score: score,
+    img: 'https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg',
+    maxScore: 36,
   };
 
   const selectedData = birdsData[iCount].find(
@@ -47,12 +53,6 @@ function App() {
     rigtAnswerData = birdsData[iCount].find((elem) => elem.id === rightId);
   }
 
-  const modalData = {
-    score: score,
-    img: 'https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg',
-    maxScore: 36,
-  };
-
   function onSelectedItem(id) {
     setSelectedId(id);
     checkScore();
@@ -63,7 +63,11 @@ function App() {
   }
 
   function onCountClick() {
-    iCount < birdsData.length - 1 && setCount(++iCount);
+    if (iCount < birdsData.length - 1) {
+      setCount(++iCount);
+    } else {
+      setModalVisible(true);
+    }
     setSelectedId(null);
     setRandomItemId(iRandomPreviewItem);
     setRightId(null);
@@ -88,9 +92,6 @@ function App() {
     setNumberListItemPress(0);
     setScoreByRound(0);
     setScore(score + scoreByRound);
-    if (iCount === 2) {
-      setModalVisible(true);
-    }
   }
 
   return (
@@ -98,7 +99,7 @@ function App() {
       {modalVisible ? (
         <Modal finalData={modalData} onClick={onStartNewGame} />
       ) : (
-        <div className={iCount > 2 ? 'App-content hidden' : 'App-content'}>
+        <div className="App-content">
           <Header score={score} />
           <Navigation navigationList={navigationList} indicatorPage={iCount} />
           <main className="Main-content">
