@@ -16,7 +16,7 @@ const Description = ({ birdsData, onClick, selectedItemId }) => {
           {birdsData.map((item) => {
             return (
               <li key={item.id} onClick={() => onClick(item.id)}>
-                <a href="#">{item.name}</a>
+                <a href="!#">{item.name}</a>
               </li>
             );
           })}

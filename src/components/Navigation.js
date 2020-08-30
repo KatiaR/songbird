@@ -8,7 +8,7 @@ const Navigation = ({navigationList, indicatorPage}) => {
         {navigationList.map((item, i) => {
           return (
             <li key={item} className={`${indicatorPage === i ? 'pointer-page' : ''}`}>
-              <a href="#">{item}</a>
+              <a href="!#">{item}</a>
             </li>
           );
         })}
