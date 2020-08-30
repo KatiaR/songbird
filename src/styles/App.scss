@@ -37,7 +37,10 @@ $background-color: rgba(80, 79, 77, 0.329);
 
 .App {
   text-align: center;
+  color: $primary-text-color;
+  font-family: 'Montserrat Alternates', sans-serif;
 
+  
   img {
     object-fit: contain;
     max-width: 30%;

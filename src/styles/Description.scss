@@ -1,6 +1,7 @@
 .Main-content-description {
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
   .Description-nav {
     min-width: 40%;
     .Description-nav-list {
@@ -29,11 +30,13 @@
     @extend %section-decoration;
     flex-direction: column;
     padding: 1rem;
+    min-width: 55%;
     .Description-items-name {
       @extend %flex-wrap;
       @include gap(1rem, center);
       img {
         object-fit: cover;
+        max-width: 35%;
         .unpickedItem {
           min-width: 50%;
         }
