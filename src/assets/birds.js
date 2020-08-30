@@ -42,11 +42,11 @@ const birdsData = [
       },
       {
         id: 6,
-        name: 'Синица',
-        species: 'Parus major',
-        description: 'В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев.',
-        image: 'https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg',
-        audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
+        name: 'Дятел',
+        species: 'Dendrocopos major',
+        description: 'Дятел – заметная и шумная птица, часто живет рядом с человеком. С середины января до конца июня можно услышать «барабанную дробь» дятлов – трель от вибрации веток под быстрыми ударами клюва птицы. В хорошую погоду дробь слышна в радиусе 1,5 км.',
+        image: 'https://live.staticflickr.com/65535/49339376578_e933426455.jpg',
+        audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3'
       }
     ],
     [
