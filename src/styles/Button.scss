@@ -1,0 +1,23 @@
+.btn-next {
+  width: 95%;
+  font-weight: 600;
+  line-height: 3rem;
+  outline: none;
+  color: white;
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: $background-gradient;
+  border-width: 0;
+  box-shadow: 5px 5px 0 #008966;
+  cursor: pointer;
+  transition: 1.5s;
+  border-radius: 0.5rem;
+
+  &:hover {
+    color: rgb(7, 221, 103);
+  }
+  &:disabled {
+    opacity: 0.2;
+  }
+}

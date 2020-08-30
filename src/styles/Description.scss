@@ -1,0 +1,51 @@
+.Main-content-description {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  .Description-nav {
+    min-width: 40%;
+    .Description-nav-list {
+      @extend %section-decoration;
+      padding: 0;
+      flex-direction: column;
+      margin: 0;
+      li {
+        @extend %list-decoration;
+        border-bottom: 1px solid black;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        a {
+          @extend %a-decoration;
+        }
+      }
+      li:hover {
+        background-color: $background-color;
+      }
+    }
+  }
+
+  .Description-items {
+    @extend %section-decoration;
+    flex-direction: column;
+    padding: 1rem;
+    min-width: 55%;
+    .Description-items-name {
+      @extend %flex-wrap;
+      @include gap(1rem, center);
+      img {
+        object-fit: cover;
+        max-width: 35%;
+        .unpickedItem {
+          min-width: 50%;
+        }
+      }
+
+      .Items-name {
+        min-width: 50%;
+      }
+      @import 'AudioPlayer';
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.Main-content-preview {
+  @extend %section-decoration;
+  @include gap(2rem, center);
+  flex-wrap: wrap;
+  .Main-content-audio {
+    @extend %flex-column;
+    min-width: 60%;
+    align-items: center;
+    justify-content: space-around;
+
+    .Main-content-audio-wrapper {
+      width: 100%;
+      @import 'AudioPlayer';
+    }
+  }
+}
